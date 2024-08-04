@@ -17,6 +17,7 @@ export default function WelcomeScreen() {
         value={firstname}
         onChangeText={onChangeFirstName}
         placeholder="First Name"
+        placeholderTextColor="grey"
       />
     </ScrollView>
   );

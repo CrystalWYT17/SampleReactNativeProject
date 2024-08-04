@@ -34,18 +34,21 @@ function FeedbackForm() {
           value={firstName}
           onChangeText={onChangeFirstName}
           placeholder="First name"
+          placeholderTextColor="grey"
         />
         <TextInput
           style={styles.input}
           value={lastName}
           onChangeText={onChangeLastName}
           placeholder="Last name"
+          placeholderTextColor="grey"
         />
         <TextInput
           style={styles.messageInput}
           value={message}
           onChangeText={onChangeMessage}
           placeholder="Message"
+          placeholderTextColor="grey"
         />
       </ScrollView>
     </KeyboardAvoidingView>
