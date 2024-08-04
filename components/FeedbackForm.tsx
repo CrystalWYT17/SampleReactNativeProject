@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+} from "react-native";
 
 function FeedbackForm() {
   // declare the variables
@@ -9,31 +16,39 @@ function FeedbackForm() {
   const [phoneNumber, onChangePhoneNumber] = useState("");
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.headingSection}>
-        How was your visit to Little Lemon?
-      </Text>
-      <Text style={styles.infoSection}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear your experience with us!
-      </Text>
-      <TextInput
-        style={styles.input}
-        value={firstName}
-        onChangeText={onChangeFirstName}
-      />
-      <TextInput
-        style={styles.input}
-        value={lastName}
-        onChangeText={onChangeLastName}
-      />
-      <TextInput
-        style={styles.messageInput}
-        value={message}
-        onChangeText={onChangeMessage}
-      />
-    </ScrollView>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <ScrollView keyboardDismissMode="on-drag">
+        <Text style={styles.headingSection}>
+          How was your visit to Little Lemon?
+        </Text>
+        <Text style={styles.infoSection}>
+          Little Lemon is a charming neighborhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. We would
+          love to hear your experience with us!
+        </Text>
+        <TextInput
+          style={styles.input}
+          value={firstName}
+          onChangeText={onChangeFirstName}
+          placeholder="First name"
+        />
+        <TextInput
+          style={styles.input}
+          value={lastName}
+          onChangeText={onChangeLastName}
+          placeholder="Last name"
+        />
+        <TextInput
+          style={styles.messageInput}
+          value={message}
+          onChangeText={onChangeMessage}
+          placeholder="Message"
+        />
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
