@@ -1,6 +1,7 @@
 import FeedbackForm from "@/components/FeedbackForm";
 import Footer from "@/components/Footer";
 import LittleLemonHeader from "@/components/LittleLemonHeader";
+import LoginScreen from "@/components/LoginScreen";
 import MenuItems from "@/components/MenuItems";
 import MenuItemsFlatList from "@/components/MenuItemsFlatList";
 import WelcomeScreen from "@/components/WelcomeScreen";
@@ -14,7 +15,8 @@ export default function HomeScreen() {
         {/* <WelcomeScreen /> */}
         {/* <MenuItems /> */}
         {/* <MenuItemsFlatList /> */}
-        <FeedbackForm />
+        {/* <FeedbackForm /> */}
+        <LoginScreen />
       </View>
       <View style={styles.footer}>
         <Footer />

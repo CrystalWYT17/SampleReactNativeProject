@@ -42,6 +42,15 @@ function FeedbackForm() {
           onChangeText={onChangeLastName}
           placeholder="Last name"
           placeholderTextColor="grey"
+          // secureTextEntry={true}
+        />
+        <TextInput
+          style={styles.input}
+          value={phoneNumber}
+          onChangeText={onChangePhoneNumber}
+          placeholder="Phone number"
+          placeholderTextColor="grey"
+          keyboardType="number-pad"
         />
         <TextInput
           style={styles.messageInput}
@@ -49,6 +58,8 @@ function FeedbackForm() {
           onChangeText={onChangeMessage}
           placeholder="Message"
           placeholderTextColor="grey"
+          multiline={true}
+          maxLength={250}
         />
       </ScrollView>
     </KeyboardAvoidingView>
