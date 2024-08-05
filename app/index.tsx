@@ -14,13 +14,13 @@ export default function HomeScreen() {
     <>
       <View style={styles.container}>
         <LittleLemonHeader />
-        {/* <WelcomeScreen /> */}
+        <WelcomeScreen />
         {/* <MenuItems /> */}
         {/* <MenuItemsFlatList /> */}
         {/* <FeedbackForm /> */}
         {/* <LoginScreen /> */}
         {/* <Welcome /> */}
-        <WelcomeColorScheme />
+        {/* <WelcomeColorScheme /> */}
       </View>
       <View style={styles.footer}>
         <Footer />
