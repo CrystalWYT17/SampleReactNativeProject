@@ -7,12 +7,26 @@ import MenuItemsFlatList from "@/components/MenuItemsFlatList";
 import Welcome from "@/components/Welcome";
 import WelcomeColorScheme from "@/components/WelcomeColorScheme";
 import WelcomeScreen from "@/components/WelcomeScreen";
-import { StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Instantiate Stack
 const Stack = createNativeStackNavigator();
+
+function LogoTitle(props: any) {
+  return (
+    <Image
+      source={require("../assets/images/LittleLemonLogo.png")}
+      style={{
+        height: 40,
+        width: 300,
+        resizeMode: "contain",
+        alignSelf: "center",
+      }}
+    />
+  );
+}
 
 export default function HomeScreen() {
   return (
@@ -36,10 +50,17 @@ export default function HomeScreen() {
         <LittleLemonHeader />
         <Stack.Navigator
           initialRouteName="Login"
-          screenOptions={{ headerStyle: { backgroundColor: "#FBDABB" } }}
+          screenOptions={{
+            headerStyle: { backgroundColor: "#333333" },
+            headerTintColor: "fff",
+            headerTitleStyle: { fontWeight: "bold" },
+          }}
         >
           <Stack.Screen
-            options={{ title: "Home" }}
+            options={{
+              title: "Home",
+              headerTitle: (props) => <LogoTitle {...props} />,
+            }}
             name="Welcome"
             component={WelcomeScreen}
           />
