@@ -19,6 +19,7 @@ export default function WelcomeScreen() {
           source={require("../assets/images/LittleLemonLogo.png")}
           accessible={true}
           accessibilityLabel="Logo"
+          resizeMode="cover"
         />
         <Text style={styles.title}>Little Lemon</Text>
       </View>
@@ -73,6 +74,6 @@ const styles = StyleSheet.create({
   logo: {
     height: 100,
     width: 100,
-    resizeMode: "contain",
+    borderRadius: 20,
   },
 });
