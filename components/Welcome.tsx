@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Image,
+  ImageBackground,
   ScrollView,
   StyleSheet,
   Text,
@@ -12,16 +13,22 @@ import {
 export default function Welcome() {
   return (
     <ScrollView style={styles.container}>
-      <Image
+      {/* <Image
         style={styles.logo}
         source={require("../assets/images/littleLemon.png")}
         accessible={true}
         accessibilityLabel="Little Lemon Logo"
-      />
-      <Text style={styles.title}>
-        Little Lemon, your local Mediterranean Bistro
-      </Text>
-      <Image
+      /> */}
+      <ImageBackground
+        style={styles.image}
+        resizeMode="contain"
+        source={require("../assets/images/littleLemonBackground.png")}
+      >
+        <Text style={styles.title}>
+          Little Lemon, your local Mediterranean Bistro
+        </Text>
+      </ImageBackground>
+      {/* <Image
         style={styles.image}
         resizeMode="cover"
         source={require("../assets/images/picture1.jpg")}
@@ -48,12 +55,13 @@ export default function Welcome() {
         source={require("../assets/images/picture4.jpg")}
         accessible={true}
         accessibilityLabel="Picture 4"
-      />
+      /> */}
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  image: { flex: 1, justifyContent: "center", height: 400, width: 350 },
   logo: {
     height: 100,
     width: 300,
@@ -73,9 +81,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  image: {
-    width: 350,
-    height: 250,
-    borderRadius: 10,
-  },
+  //   image: {
+  //     width: 350,
+  //     height: 250,
+  //     borderRadius: 10,
+  //   },
 });
