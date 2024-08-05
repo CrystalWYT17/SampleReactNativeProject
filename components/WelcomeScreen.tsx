@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Image,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -9,7 +10,7 @@ import {
   View,
 } from "react-native";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }: any) {
   const [firstname, onChangeFirstName] = useState("");
   const colorScheme = useColorScheme();
 
@@ -51,13 +52,16 @@ export default function WelcomeScreen() {
         and classic cocktails in a lively but casual environment. We would love
         to hear more about your experience with us!
       </Text>
-      <TextInput
+      <Pressable onPress={() => navigation.navigate("Menu")}>
+        <Text style={styles.button}>View menu</Text>
+      </Pressable>
+      {/* <TextInput
         style={styles.textInput}
         value={firstname}
         onChangeText={onChangeFirstName}
         placeholder="First Name"
         placeholderTextColor="grey"
-      />
+      /> */}
     </ScrollView>
   );
 }
@@ -96,5 +100,15 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     borderRadius: 20,
+  },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: "#EE9972",
+    borderColor: "#EE9972",
+    borderWidth: 2,
+    borderRadius: 12,
   },
 });
