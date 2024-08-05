@@ -21,7 +21,7 @@ const Footer = () => (
   <Text style={menuStyles.footerText}>This is menu footer.</Text>
 );
 
-export default function MenuItemsFlatList() {
+export default function MenuItemsFlatList({ navigation }: any) {
   const menuItemsToDisplay = [
     {
       title: "Appetizers",
@@ -96,14 +96,19 @@ export default function MenuItemsFlatList() {
         </Text>
       </Pressable>
       {showMenu && (
-        <SectionList
-          keyExtractor={(item: any, index) => item + index}
-          sections={menuItemsToDisplay}
-          renderItem={renderItem}
-          renderSectionHeader={renderSectionHeader}
-          ListFooterComponent={Footer}
-          ItemSeparatorComponent={Separator}
-        />
+        <>
+          <SectionList
+            keyExtractor={(item: any, index) => item + index}
+            sections={menuItemsToDisplay}
+            renderItem={renderItem}
+            renderSectionHeader={renderSectionHeader}
+            ListFooterComponent={Footer}
+            ItemSeparatorComponent={Separator}
+          />
+          <Pressable onPress={() => navigation.goBack()}>
+            <Text style={menuStyles.buttonText}>Go back</Text>
+          </Pressable>
+        </>
       )}
     </View>
   );
