@@ -15,6 +15,7 @@ export default function LoginScreen() {
         onChangeText={onChangeEmail}
         placeholder="Email"
         placeholderTextColor="grey"
+        keyboardType="email-address"
       />
       <TextInput
         style={styles.inputBox}
