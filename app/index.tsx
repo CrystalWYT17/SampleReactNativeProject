@@ -14,9 +14,9 @@ export default function HomeScreen() {
         <LittleLemonHeader />
         {/* <WelcomeScreen /> */}
         {/* <MenuItems /> */}
-        {/* <MenuItemsFlatList /> */}
+        <MenuItemsFlatList />
         {/* <FeedbackForm /> */}
-        <LoginScreen />
+        {/* <LoginScreen /> */}
       </View>
       <View style={styles.footer}>
         <Footer />

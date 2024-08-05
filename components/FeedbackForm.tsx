@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -35,6 +36,9 @@ function FeedbackForm() {
           onChangeText={onChangeFirstName}
           placeholder="First name"
           placeholderTextColor="grey"
+          onFocus={() => Alert.alert("First name is focused.")}
+          onBlur={() => "First name is now blurred."}
+          // clearButtonMode="always"
         />
         <TextInput
           style={styles.input}
@@ -42,6 +46,7 @@ function FeedbackForm() {
           onChangeText={onChangeLastName}
           placeholder="Last name"
           placeholderTextColor="grey"
+          clearButtonMode="always"
           // secureTextEntry={true}
         />
         <TextInput
@@ -51,6 +56,7 @@ function FeedbackForm() {
           placeholder="Phone number"
           placeholderTextColor="grey"
           keyboardType="number-pad"
+          clearButtonMode="always"
         />
         <TextInput
           style={styles.messageInput}
