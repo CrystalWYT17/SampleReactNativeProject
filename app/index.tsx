@@ -78,6 +78,7 @@ export default function HomeScreen() {
     // </NavigationContainer>
     <NavigationContainer independent={true}>
       <Tab.Navigator
+        initialRouteName="Login"
         screenOptions={({ route }: any) => ({
           tabBarIcon: ({ focused, color, size }: any) => {
             let iconName: any;
@@ -87,6 +88,8 @@ export default function HomeScreen() {
                 : "information-circle-outline";
             } else if (route.name === "Menu") {
               iconName = "list";
+            } else if (route.name === "Login") {
+              iconName = "enter";
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -94,6 +97,7 @@ export default function HomeScreen() {
           tabBarInactiveTintColor: "gray",
         })}
       >
+        <Tab.Screen name="Login" component={LoginScreen} />
         <Tab.Screen name="Welcome" component={WelcomeScreen} />
         <Tab.Screen name="Menu" component={MenuItemsFlatList} />
       </Tab.Navigator>
