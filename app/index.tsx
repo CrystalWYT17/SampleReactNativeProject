@@ -5,6 +5,7 @@ import LoginScreen from "@/components/LoginScreen";
 import MenuItems from "@/components/MenuItems";
 import MenuItemsFlatList from "@/components/MenuItemsFlatList";
 import Welcome from "@/components/Welcome";
+import WelcomeColorScheme from "@/components/WelcomeColorScheme";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import { StyleSheet, View } from "react-native";
 
@@ -13,12 +14,13 @@ export default function HomeScreen() {
     <>
       <View style={styles.container}>
         <LittleLemonHeader />
-        <WelcomeScreen />
+        {/* <WelcomeScreen /> */}
         {/* <MenuItems /> */}
         {/* <MenuItemsFlatList /> */}
         {/* <FeedbackForm /> */}
         {/* <LoginScreen /> */}
         {/* <Welcome /> */}
+        <WelcomeColorScheme />
       </View>
       <View style={styles.footer}>
         <Footer />
